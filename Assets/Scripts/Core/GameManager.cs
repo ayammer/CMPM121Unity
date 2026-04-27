@@ -16,6 +16,8 @@ public class GameManager
     public GameState state;
 
     public int countdown;
+    public bool playerWon;
+
     private static GameManager theInstance;
     public static GameManager Instance {  get
         {

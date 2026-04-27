@@ -249,6 +249,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void HandleWin()
     {
+        GameManager.Instance.playerWon = true;
         GameManager.Instance.state = GameManager.GameState.GAMEOVER;
         Debug.Log("You Win!");
     }
