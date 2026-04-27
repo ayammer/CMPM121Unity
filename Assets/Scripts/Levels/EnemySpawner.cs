@@ -4,11 +4,12 @@ using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using RPN = RPNEvaluator.RPNEvaluator;
-
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] private TMP_Text WaveClearPrompt;
     public Image level_selector;
     public GameObject button;
     public GameObject enemy;
@@ -20,11 +21,13 @@ public class EnemySpawner : MonoBehaviour
     private Dictionary<string, LevelDefinition> levelLookup;
 
     private LevelDefinition currentLevel;
+    private int enemyAmount;
     private int currentWave;
     private int activeSpawnStreams;
 
     void Start()
     {
+        //WaveClearPrompt.gameObject.SetActive(false);
         GameManager.Instance.state = GameManager.GameState.PREGAME;
         LoadDefinitions();
         BuildLevelButtons();
@@ -123,6 +126,13 @@ public class EnemySpawner : MonoBehaviour
         else
         {
             GameManager.Instance.state = GameManager.GameState.WAVEEND;
+
+            WaveClearPrompt.text = 
+                "Wave Cleared!\n\n" +
+                "Enemies Defeated: " + enemyAmount + "\n\n" +
+                "Next Wave: " + (currentWave + 1);
+            
+            WaveClearPrompt.gameObject.SetActive(true);
         }
     }
 
@@ -151,6 +161,8 @@ public class EnemySpawner : MonoBehaviour
 
         int remaining = totalCount;
         int sequenceIndex = 0;
+
+        enemyAmount += totalCount;
 
         while (remaining > 0)
         {
