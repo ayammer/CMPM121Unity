@@ -27,7 +27,9 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        //WaveClearPrompt.gameObject.SetActive(false);
+        if (WaveClearPrompt != null) {
+            WaveClearPrompt.gameObject.SetActive(false);
+        }
         GameManager.Instance.state = GameManager.GameState.PREGAME;
         LoadDefinitions();
         BuildLevelButtons();
@@ -100,6 +102,10 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnWave()
     {
+        if (WaveClearPrompt != null) {
+            WaveClearPrompt.gameObject.SetActive(false);
+        }
+        
         GameManager.Instance.state = GameManager.GameState.COUNTDOWN;
         GameManager.Instance.countdown = 3;
 
@@ -110,6 +116,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
         GameManager.Instance.state = GameManager.GameState.INWAVE;
+        enemyAmount = 0;
         activeSpawnStreams = 0;
 
         foreach (SpawnDefinition spawn in currentLevel.spawns)
