@@ -19,6 +19,13 @@
        "hp": 30,
        "speed": 7,
        "damage": 10
+   },
+   {
+        "name": "snake",
+        "sprite": 40,
+        "hp": 15,
+        "speed": 12,
+        "damage": 5
    }
  
 ]
