@@ -50,6 +50,14 @@
                 "count": "wave 5 / 1 wave 5 % - *",
                 "hp": "100 25 wave * +",
                 "location": "random bone"
+            },
+            {
+                "enemy": "eye",
+                "count": "3 wave +",
+                "hp": "base 3 wave * +",
+                "delay": "3",
+                "sequence": [1,2],
+                "location": "random"
             }
         ]
    },
