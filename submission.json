@@ -1,0 +1,14 @@
+{
+   "team": [
+             {"firstname": "Nikolas",
+              "lastname": "Huang",
+              "github": "nizhuang305586",
+              "email": "nizhuang@ucsc.edu"},
+             {"firstname": "Aaron",
+              "lastname": "Yam",
+              "github": "ayam26",
+              "email": "ajyam@ucsc.edu"}
+            ],
+   "repository": "https://github.com/ayammer/CMPM121Unity.git",
+   "commit": "04e11fda9457079f588e3e83a95c2f494b588d7d"
+}
