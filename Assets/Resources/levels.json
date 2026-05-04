@@ -50,6 +50,14 @@
                 "count": "wave 5 / 1 wave 5 % - *",
                 "hp": "100 25 wave * +",
                 "location": "random bone"
+            },
+            {
+                "enemy": "eye",
+                "count": "3 wave +",
+                "hp": "base 3 wave * +",
+                "delay": "3",
+                "sequence": [1,2],
+                "location": "random"
             }
         ]
    },
@@ -106,6 +114,14 @@
                 "hp": "75 50 wave * +",
                 "damage": "base 10 +",
                 "location": "random bone"
+            },
+            {
+                "enemy": "snake",
+                "count": "5 wave 4 * +",
+                "hp": "25 wave *",
+                "delay": "3",
+                "sequence": [1, 2, 3],
+                "location": "random"
             }
         ]
 
@@ -134,6 +150,14 @@
                 "hp": "75 15 wave * +",
                 "damage": "base 5 -",
                 "location": "random bone"
+            },
+            {
+                "enemy": "snake",
+                "count": "5 wave 4 * +",
+                "hp": "25 wave *",
+                "delay": "3",
+                "sequence": [1, 2, 3],
+                "location": "random"
             }
         ]
    }

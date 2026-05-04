@@ -34,13 +34,11 @@ public class PlayerController : MonoBehaviour
         hp.OnDeath += Die;
         hp.team = Hittable.Team.PLAYER;
 
-        // tell UI elements what to show
         healthui.SetHealth(hp);
         manaui.SetSpellCaster(spellcaster);
         spellui.SetSpell(spellcaster.spell);
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -66,8 +64,7 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.playerWon = false;
         GameManager.Instance.state = GameManager.GameState.GAMEOVER;
         unit.movement = Vector2.zero;
-        gameObject.SetActive(false);
+        speed = 0;
         Debug.Log("You Lost");
     }
-
 }
